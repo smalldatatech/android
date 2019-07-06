@@ -20,9 +20,9 @@
 
 package com.nextcloud.client.di;
 
-import com.nextcloud.client.errorhandling.ShowErrorActivity;
 import com.nextcloud.client.etm.EtmActivity;
 import com.nextcloud.client.logger.ui.LogsActivity;
+import com.nextcloud.client.media.PlayerService;
 import com.nextcloud.client.onboarding.FirstRunActivity;
 import com.nextcloud.client.onboarding.WhatsNewActivity;
 import com.owncloud.android.authentication.AuthenticatorActivity;
@@ -36,47 +36,12 @@ import com.owncloud.android.providers.UsersAndGroupsSearchProvider;
 import com.owncloud.android.services.AccountManagerService;
 import com.owncloud.android.services.OperationsService;
 import com.owncloud.android.ui.activities.ActivitiesActivity;
-import com.owncloud.android.ui.activity.BaseActivity;
-import com.owncloud.android.ui.activity.ConflictsResolveActivity;
-import com.owncloud.android.ui.activity.ContactsPreferenceActivity;
-import com.owncloud.android.ui.activity.CopyToClipboardActivity;
-import com.owncloud.android.ui.activity.DrawerActivity;
-import com.owncloud.android.ui.activity.ErrorsWhileCopyingHandlerActivity;
-import com.owncloud.android.ui.activity.ExternalSiteWebView;
-import com.owncloud.android.ui.activity.FileDisplayActivity;
-import com.owncloud.android.ui.activity.FilePickerActivity;
-import com.owncloud.android.ui.activity.FolderPickerActivity;
-import com.owncloud.android.ui.activity.ManageAccountsActivity;
-import com.owncloud.android.ui.activity.ManageSpaceActivity;
-import com.owncloud.android.ui.activity.NotificationsActivity;
-import com.owncloud.android.ui.activity.ParticipateActivity;
-import com.owncloud.android.ui.activity.PassCodeActivity;
-import com.owncloud.android.ui.activity.ReceiveExternalFilesActivity;
-import com.owncloud.android.ui.activity.RequestCredentialsActivity;
-import com.owncloud.android.ui.activity.RichDocumentsWebView;
-import com.owncloud.android.ui.activity.SettingsActivity;
-import com.owncloud.android.ui.activity.ShareActivity;
-import com.owncloud.android.ui.activity.SsoGrantPermissionActivity;
-import com.owncloud.android.ui.activity.SyncedFoldersActivity;
-import com.owncloud.android.ui.activity.UploadFilesActivity;
-import com.owncloud.android.ui.activity.UploadListActivity;
-import com.owncloud.android.ui.activity.UploadPathActivity;
-import com.owncloud.android.ui.activity.UserInfoActivity;
+import com.owncloud.android.ui.activity.*;
 import com.owncloud.android.ui.dialog.ChooseTemplateDialogFragment;
 import com.owncloud.android.ui.dialog.MultipleAccountsDialog;
-import com.owncloud.android.ui.fragment.ExtendedListFragment;
-import com.owncloud.android.ui.fragment.FileDetailActivitiesFragment;
-import com.owncloud.android.ui.fragment.FileDetailFragment;
-import com.owncloud.android.ui.fragment.FileDetailSharingFragment;
-import com.owncloud.android.ui.fragment.LocalFileListFragment;
-import com.owncloud.android.ui.fragment.OCFileListFragment;
-import com.owncloud.android.ui.fragment.PhotoFragment;
+import com.owncloud.android.ui.fragment.*;
 import com.owncloud.android.ui.fragment.contactsbackup.ContactListFragment;
-import com.owncloud.android.ui.preview.PreviewImageActivity;
-import com.owncloud.android.ui.preview.PreviewImageFragment;
-import com.owncloud.android.ui.preview.PreviewMediaFragment;
-import com.owncloud.android.ui.preview.PreviewTextFragment;
-import com.owncloud.android.ui.preview.PreviewVideoActivity;
+import com.owncloud.android.ui.preview.*;
 import com.owncloud.android.ui.trashbin.TrashbinActivity;
 
 import dagger.Module;
@@ -96,7 +61,6 @@ abstract class ComponentsModule {
     @ContributesAndroidInjector abstract CopyToClipboardActivity copyToClipboardActivity();
     @ContributesAndroidInjector abstract DeepLinkLoginActivity deepLinkLoginActivity();
     @ContributesAndroidInjector abstract DrawerActivity drawerActivity();
-    @ContributesAndroidInjector abstract ShowErrorActivity errorShowActivity();
     @ContributesAndroidInjector abstract ErrorsWhileCopyingHandlerActivity errorsWhileCopyingHandlerActivity();
     @ContributesAndroidInjector abstract ExternalSiteWebView externalSiteWebView();
     @ContributesAndroidInjector abstract FileDisplayActivity fileDisplayActivity();
@@ -154,4 +118,5 @@ abstract class ComponentsModule {
 
     @ContributesAndroidInjector abstract AccountManagerService accountManagerService();
     @ContributesAndroidInjector abstract OperationsService operationsService();
+    @ContributesAndroidInjector abstract PlayerService playerService();
 }
